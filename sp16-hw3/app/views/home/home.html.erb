@@ -1,0 +1,41 @@
+<div class="card">
+	<img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" height="200px">
+	<h1>Here are all the Cats in the database.</h1>
+	<% @cats.each do |cat| %>
+		<div class="list">
+			<p><%= cat.name %></p>
+		</div>
+	<% end %>
+</div>
+
+<div class="card">
+	<img src="https://openclipart.org/image/2400px/svg_to_png/215499/users.png" height="200px">
+	<h1>Here are all the Users in the database.</h1>
+	<% @users.each do |user| %>
+		<div class="list">
+			<p><%= user.name + ' is ' + user.age.to_s + ' years old and their email is ' + user.email %></p>
+		</div>
+	<% end %>
+</div>
+
+
+<div class="card">
+	<img src="http://www.clker.com/cliparts/e/2/a/d/1206574733930851359Ryan_Taylor_Green_Tick.svg.med.png" height="200px">
+	<h1>Here are all the Todos in the database.</h1>
+	<h2> Todo </h2>
+	<% @todos.each do |todo| %>
+		<% if !todo.finished %>
+		<div class="list">
+			<p><%= todo.tasks %></p>
+		</div>
+		<%end %>
+	<% end %>
+	<h2>Completed Todos </h2>
+	<% @todos.each do |todo| %>
+		<% if todo.finished %>
+		<div class="list">
+			<p><%= todo.tasks %></p>
+		</div>
+		<%end %>
+	<% end %>
+</div>
